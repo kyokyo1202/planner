@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>간트차트 페이지</title>
+    <style>
+      body {
+        margin-top: 140px;
+        display: flex;
+        font-family: sans-serif;
+        background: white;
+      }
+      .header {
+        width: 100%;
+        border-bottom-style: double;
+        border-bottom-color: rgb(0, 0, 0);
+        border-bottom-width: 10px;
+      }
+      h2 {
+        color: #3c3c3c;
+        text-align: center;
+      }
+      .contain {
+        border: radius;
+        border: 2px solid #3c3c3c;
+        width: 72%;
+        margin-left: 30px;
+      }
+      .board {
+        border: radius;
+        width: 22%;
+        border: 2px solid #3c3c3c;
+        margin-left: 30px;
+      }
+      /* custom class */
+      .gantt .bar-milestone .bar {
+        fill: #3c3c3c;
+      }
+    </style>
+       <meta name="viewport" content="width=device-width, initial-scale=1" />
+       <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+       <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link href="memo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="frappe-gantt.css" />
+    <script src="frappe-gantt.js"></script>
+  </head>
+  <body>
+    <div class="contain">
+      <h2>Gant chart</h2>
+      <div class="gantt-target"></div>
+    </div>
+    <script>
+      var tasks = [
+        {
+          start: "2018-10-01",
+          end: "2018-10-08",
+          name: "플래너 만들기",
+          id: "Task 0",
+          progress: 91,
+        },
+        {
+          start: "2018-10-03",
+          end: "2018-10-06",
+          name: "기획 회의",
+          id: "Task 1",
+          progress: 55,
+          dependencies: "Task 0",
+        },
+        {
+          start: "2018-10-04",
+          end: "2018-10-08",
+          name: "강의 듣기",
+          id: "Task 2",
+          progress: 40,
+          dependencies: "Task 1",
+        },
+        {
+          start: "2018-10-08",
+          end: "2018-10-09",
+          name: "구현하기",
+          id: "Task 3",
+          progress: 20,
+          dependencies: "Task 2",
+        },
+        {
+          start: "2018-10-08",
+          end: "2018-10-10",
+          name: "수정",
+          id: "Task 4",
+          progress: 50,
+          dependencies: "Task 2",
+        },
+        {
+          start: "2018-10-11",
+          end: "2018-10-11",
+          name: "Go Live!",
+          id: "Task 5",
+          progress: 10,
+          dependencies: "Task 4",
+          custom_class: "bar-milestone",
+        },
+        // {
+        // 	start: '2014-01-05',
+        // 	end: '2019-10-12',
+        // 	name: 'Long term task',
+        // 	id: "Task 6",
+        // 	progress: 0
+        // }
+      ];
+      var gantt_chart = new Gantt(".gantt-target", tasks, {
+        on_click: function (task) {
+          console.log(task);
+        },
+        on_date_change: function (task, start, end) {
+          console.log(task, start, end);
+        },
+        on_progress_change: function (task, progress) {
+          console.log(task, progress);
+        },
+        on_view_change: function (mode) {
+          console.log(mode);
+        },
+        view_mode: "Week",
+        language: "ko",
+      });
+      console.log(gantt_chart);
+    </script>
+    <div class="board">
+      <div class="board-title">프로젝트 목표 및 내용</div>
+      <div class="inputDiv">
+        <input type="text" class="input" placeholder="내용을 입력해주세요" />
+        <button class="add"><i class="fas fa-plus"></i></button>
+      </div>
+      <div class="container"></div>
+    </div>
+      <script src="memo.js"></script>
+    </body>
+  </body>
+</html>
