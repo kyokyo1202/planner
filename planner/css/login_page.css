@@ -1,9 +1,9 @@
 .login_page {
   display: flex;
   flex-direction: column;
-  margin: 30vh 100vh;
+  margin: 300px 915px;
   background-color: #3c3c3c;
-  padding: 100px;
+  padding: 50px;
   border-radius: 20px;
 }
 
@@ -25,23 +25,29 @@ input:focus {
 }
 
 .btn_submit {
-  width: 50px;
-  height: 50px;
-  margin-top: 40px;
-  margin-left: 50px;
+  color: #3c3c3c;
+  font-size: 25px;
+  width: 200px;
+  height: 100px;
+  margin-top: 20px;
   border: none;
   border-radius: 10px;
 }
 
 .login_bottom {
-  margin: 10px;
+  margin-top: 30px;
   color: white;
 }
 
 .login_bottom span {
   border-right: solid 1px white;
+  padding: 0px 5px;
 }
 
 .login_bottom span:nth-child(1) {
   border-left: solid 1px white;
+}
+
+.sign-up_link {
+  color: white;
 }
