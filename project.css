@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #3c3c3c;
+}
+
+#header {
+  width: 100%;
+  height: 80px;
+  color: white;
+}
+
+#body {
+  height: 100%;
+}
+
+.project {
+  height: 350px;
+}
+
+.view-project {
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.view-project-list {
+  list-style: none;
+  display: flex;
+}
+
+.view-project-list > li {
+  position: absolute;
+  width: 100%;
+}
+
+.moveBtn {
+  width: 60%;
+  top: 180px;
+  color: white;
+  position: absolute;
+  z-index: 2;
+  font-size: 60px;
+}
+
+.moveBtn .pre {
+  float: left;
+  margin-left: 10px;
+}
+
+.moveBtn .next {
+  float: right;
+  margin-right: 10px;
+}
+
+.moveBtn .pre:hover {
+  background-color: #3c3c3c;
+  border-radius: 4px;
+}
+
+.moveBtn .next:hover {
+  background-color: #3c3c3c;
+  border-radius: 4px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3c3c3c;
+  padding: 8px 15px;
+  border-bottom: 1px solid white;
+}
+
+.navbar_menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.navbar_menu li {
+  padding: 8px 12px;
+}
+
+.navbar_menu li:hover {
+  background-color: #a1c4cf;
+  border-radius: 4px;
+}
+
+.describe-box {
+  width: 55%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.describe-project {
+  display: flex;
+}
+
+.project-view {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.project-view li {
+  margin: 8px;
+  margin-top: 20px;
+}
+
+.img-view:hover {
+  opacity: 0.5;
+}
+
+/* 반응형으로 만들 때 */
+@media screen and (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+
+  .navbar_menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar_menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar_icons {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+#footer {
+  height: 200px;
+  border-top: 1px solid #dfdfdf;
+}
